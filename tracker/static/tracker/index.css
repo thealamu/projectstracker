@@ -1,5 +1,6 @@
 main {
   display: grid;
+  row-gap: 4%;
   justify-content: center;
   grid-template-areas:
     "app-logo"
@@ -57,10 +58,16 @@ main {
   margin: 6% 0 0 4%;
 }
 
+#list-header h2 {
+  font-weight: 700;
+  font-size: 1.7em;
+}
+
 @media (min-width: 700px) {
   main {
     margin: 4% 8%;
     grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 12%;
     grid-template-areas:
       "app-logo synopsis synopsis"
       "list-header list-header filter"
