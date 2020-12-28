@@ -10,6 +10,71 @@ main {
     "projects-list";
 }
 
+#app-logo img {
+  width: "250px";
+  height: 100px;
+}
+
+#synopsis {
+  display: flex;
+  background-color: #ffffff;
+  width: 500px;
+  height: 100px;
+  border-radius: 8px;
+  justify-content: space-around;
+  align-items: center;
+  justify-self: right;
+}
+
+#numdot {
+  display: flex;
+}
+
+#numdot span {
+  color: #061b3b;
+  font-size: 2.2em;
+  font-weight: 900;
+}
+
+#synopsis .underline {
+  color: #b6c1cf;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+#synopsis .dot {
+  margin: 6% 0 0 4%;
+}
+
+@media (min-width: 700px) {
+  main {
+    margin: 8%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "app-logo synopsis synopsis"
+      "list-header list-header filter"
+      "projects-list projects-list projects-list";
+  }
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.green {
+  background-color: #2ac6a5;
+}
+
+.yellow {
+  background-color: #fff03d;
+}
+
+.blue {
+  background-color: #216bff;
+}
+
 #app-logo {
   grid-area: app-logo;
 }

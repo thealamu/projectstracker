@@ -8,13 +8,36 @@
 {% block content %}
 <main>
         <div id="app-logo">
-                <img width="200px" height="100px" src="{% static 'tracker/logo.png' %}" />
+                <img src="{% static 'tracker/logo.png' %}" />
         </div>
         <div id="synopsis">
-                <p>12 in progress</p>
-                <p>3 paused</p>
-                <p>85 shipped</p>
-                <p>100 project total</p>
+                <div id="in-progress">
+                        <div id="numdot">
+                                <span><b>12</b></span>
+                                <div class="dot blue"></div>
+                        </div>
+                        <span class="underline">In progress</span>
+                </div>
+                <div id="paused">
+                        <div id="numdot">
+                                <span><b>3</b></span>
+                                <div class="dot yellow"></div>
+                        </div>
+                        <span class="underline">Paused</span>
+                </div>
+                <div id="shipped">
+                        <div id="numdot">
+                                <span><b>85</b></span>
+                                <div class="dot green"></div>
+                        </div>
+                        <span class="underline">Shipped</span>
+                </div>
+                <div id="total">
+                        <div id="numdot">
+                                <span><b>100</b></span>
+                        </div>
+                        <span class="underline">Projects total</span>
+                </div>
         </div>
         <div id="list-header">
                 <h2>Projects</h2>
