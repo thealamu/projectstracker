@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Projects Tracker</title>
-  </head>
-  <body>
-    <h1>This is a projects tracker app</h1>
-  </body>
-</html>
+{% extends "projectstracker/index.html" %}
+{% load static %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'tracker/index.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
+<h1>Tracker</h1>
+{% endblock content %}
