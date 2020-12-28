@@ -1,0 +1,31 @@
+main {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  grid-template-areas:
+    "app-logo"
+    "synopsis"
+    "list-header"
+    "filter"
+    "projects-list";
+}
+
+#app-logo {
+  grid-area: app-logo;
+}
+
+#synopsis {
+  grid-area: synopsis;
+}
+
+#list-header {
+  grid-area: list-header;
+}
+
+#filter {
+  grid-area: filter;
+}
+
+#projects-list {
+  grid-area: projects-list;
+}

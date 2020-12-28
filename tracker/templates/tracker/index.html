@@ -6,5 +6,31 @@
 {% endblock stylesheet %}
 
 {% block content %}
-<h1>Tracker</h1>
+<main>
+        <div id="app-logo">
+                <img width="200px" height="100px" src="{% static 'tracker/logo.png' %}" />
+        </div>
+        <div id="synopsis">
+                <p>12 in progress</p>
+                <p>3 paused</p>
+                <p>85 shipped</p>
+                <p>100 project total</p>
+        </div>
+        <div id="list-header">
+                <h2>Projects</h2>
+        </div>
+        <div id="filter">
+                Filter by
+                <select>
+                        <option value="shipping soon">Shipping Soon</option>
+                </select>
+        </div>
+        <div id="projects-list">
+                <ul>
+                        {% for project in projects %}
+                        <li>{{ project.title }}</li>
+                        {% endfor %}
+                </ul>
+        </div>
+</main>
 {% endblock content %}
