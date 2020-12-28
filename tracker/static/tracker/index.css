@@ -1,6 +1,5 @@
 main {
   display: grid;
-  gap: 20px;
   justify-content: center;
   grid-template-areas:
     "app-logo"
@@ -10,20 +9,32 @@ main {
     "projects-list";
 }
 
+#app-logo {
+  justify-self: center;
+  align-self: center;
+}
+
 #app-logo img {
-  width: "250px";
-  height: 100px;
+  width: 300px;
+  height: 300px;
+}
+
+#app-logo h1 {
+  color: #092c4c;
+  font-weight: 900;
+  font-size: 2.7em;
 }
 
 #synopsis {
   display: flex;
-  background-color: #ffffff;
+  background-color: #fefefe;
   width: 500px;
   height: 100px;
   border-radius: 8px;
   justify-content: space-around;
   align-items: center;
   justify-self: right;
+  align-self: center;
 }
 
 #numdot {
@@ -48,12 +59,16 @@ main {
 
 @media (min-width: 700px) {
   main {
-    margin: 8%;
+    margin: 4% 8%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
       "app-logo synopsis synopsis"
       "list-header list-header filter"
       "projects-list projects-list projects-list";
+  }
+  #app-logo {
+    display: flex;
+    align-items: center;
   }
 }
 
