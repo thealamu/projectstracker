@@ -58,9 +58,44 @@ main {
   margin: 6% 0 0 4%;
 }
 
+#list-header {
+  align-self: center;
+}
+
 #list-header h2 {
   font-weight: 700;
   font-size: 1.7em;
+}
+
+#filter {
+  display: flex;
+  background-color: #fefefe;
+  padding: 14px;
+  height: 16px;
+  border-radius: 32px;
+  width: 300px;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+#filter #filter-text {
+  margin-right: 64px;
+  color: #9fadba;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+#filter select {
+  color: #93a3b1;
+  width: 140px;
+  font-weight: 900;
+  border: none;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(arrowdown.svg) 96% / 20% no-repeat transparent;
 }
 
 @media (min-width: 700px) {
@@ -76,6 +111,9 @@ main {
   #app-logo {
     display: flex;
     align-items: center;
+  }
+  #filter {
+    justify-self: end;
   }
 }
 
