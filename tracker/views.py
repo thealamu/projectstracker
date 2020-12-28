@@ -3,4 +3,7 @@ from .models import Project
 
 
 def index(request):
-    return render(request, 'tracker/index.html')
+    context = {
+        'projects': Project.objects.all()
+    }
+    return render(request, 'tracker/index.html', context)
