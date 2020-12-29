@@ -155,17 +155,32 @@ main {
     margin: 4% 8%;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
+      "app-logo app-logo app-logo"
+      "synopsis synopsis synopsis"
+      "list-header list-header filter"
+      "projects-list projects-list projects-list";
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    margin: 4% 8%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
       "app-logo synopsis synopsis"
       "list-header list-header filter"
       "projects-list projects-list projects-list";
   }
+
   #synopsis {
-    justify-self: right;
+    justify-self: end;
   }
+
   #app-logo {
     display: flex;
     align-items: center;
   }
+
   #filter {
     justify-self: end;
   }
