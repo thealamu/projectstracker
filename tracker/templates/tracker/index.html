@@ -1,5 +1,6 @@
 {% extends "projectstracker/index.html" %}
 {% load static %}
+{% load statestring %}
 
 {% block stylesheet %}
 <link rel="stylesheet" href="{% static 'tracker/index.css' %}">
@@ -59,7 +60,7 @@
                         {% for project in projects %}
                         <li class="project-item">
                                 <div id="project-item-state">
-                                        {{project.state}}
+                                        {{project.state|statestring}}
                                 </div>
                                 <div id="project-item-info">
                                         <div class="clamp-max-lines-1">
