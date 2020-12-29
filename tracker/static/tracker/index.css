@@ -57,7 +57,10 @@ main {
 #synopsis .dot {
   margin: 6% 0 0 4%;
 }
+
 #list-header {
+  margin-top: 8%;
+  margin-left: 4%;
   align-self: center;
 }
 
@@ -66,6 +69,7 @@ main {
   font-size: 1.7em;
 }
 #filter {
+  margin-left: 4%;
   display: flex;
   background-color: #fefefe;
   padding: 14px;
@@ -98,7 +102,7 @@ main {
 
 #projects-list ul {
   list-style: none;
-  margin: 0;
+  margin: 4% 4%;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -173,6 +177,26 @@ main {
       "list-header list-header filter"
       "projects-list projects-list projects-list";
   }
+
+  #projects-list ul {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #list-header {
+    margin: 16% 0 0 0;
+  }
+
+  #list-header h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  #filter {
+    justify-self: end;
+    align-self: flex-end;
+    margin-top: 16%;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -192,10 +216,6 @@ main {
   #app-logo {
     display: flex;
     align-items: center;
-  }
-
-  #filter {
-    justify-self: end;
   }
 }
 
