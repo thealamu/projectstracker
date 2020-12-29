@@ -60,14 +60,14 @@
                         {% for project in projects %}
                         <li class="project-item">
                                 <div id="project-item-state">
-                                        {{project.state|statestring}}
+                                        <span>{{project.state|statestring}}</span>
                                 </div>
                                 <div id="project-item-info">
                                         <div class="clamp-max-lines-1">
                                                 <span id="project-item-title">{{project.title}}</span>
                                         </div>
                                         <br>
-                                        <div class="clamp-max-lines-4">
+                                        <div class="clamp-max-lines-6">
                                                 <span id="project-item-desc">{{project.description}}</span>
                                         </div>
                                 </div>
