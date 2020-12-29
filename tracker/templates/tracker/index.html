@@ -57,7 +57,20 @@
         <div id="projects-list">
                 <ul>
                         {% for project in projects %}
-                        <li>{{ project.title }}</li>
+                        <li class="project-item">
+                                <div id="project-item-state">
+                                        {{project.state}}
+                                </div>
+                                <div id="project-item-info">
+                                        <div class="clamp-max-lines-1">
+                                                <span id="project-item-title">{{project.title}}</span>
+                                        </div>
+                                        <br>
+                                        <div class="clamp-max-lines-4">
+                                                <span id="project-item-desc">{{project.description}}</span>
+                                        </div>
+                                </div>
+                        </li>
                         {% endfor %}
                 </ul>
         </div>
