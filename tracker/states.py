@@ -1,9 +1,9 @@
-states = ["Buried", "Paused", "In progress", "Shipping soon", "Shipped"]
+states = ["buried", "paused", "in progress", "shipping soon", "shipped"]
 
 
 def id_for_string(state_str):
     try:
-        return states.index(state_str.capitalize())
+        return states.index(state_str.lower())
     except ValueError:
         return 0
 
@@ -16,4 +16,4 @@ class State:
         self.id = state_id
 
     def __str__(self):
-        return states[self.id]
+        return states[self.id].capitalize()
