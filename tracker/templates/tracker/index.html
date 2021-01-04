@@ -56,6 +56,7 @@
                 </select>
         </div>
         <div id="projects-list">
+                {% if projects %}
                 <ul>
                         {% for project in projects %}
                         <li class="project-item">
@@ -74,6 +75,9 @@
                         </li>
                         {% endfor %}
                 </ul>
+                {% else %}
+                <img id="img-empty" alt="empty" src="{% static 'tracker/empty.svg' %}" />
+                {% endif %}
         </div>
 </main>
 <script>

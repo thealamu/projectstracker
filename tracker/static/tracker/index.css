@@ -101,6 +101,11 @@ main {
   background: url(arrowdown.svg) 96% / 20% no-repeat transparent;
 }
 
+#projects-list {
+  display: flex;
+  justify-content: center;
+}
+
 #projects-list ul {
   list-style: none;
   margin: 4% 4%;
@@ -173,6 +178,13 @@ main {
   color: #092c4c;
   font-weight: 300;
   font-size: 0.9em;
+}
+
+#img-empty {
+  width: 50vw;
+  height: auto;
+  margin-top: 8%;
+  opacity: 0.7;
 }
 
 @media (min-width: 700px) {
