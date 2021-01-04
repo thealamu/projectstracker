@@ -5,7 +5,7 @@ def id_for_string(state_str):
     try:
         return states.index(state_str.lower())
     except ValueError:
-        return 0
+        return -1
 
 
 class State:

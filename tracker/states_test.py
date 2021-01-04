@@ -19,7 +19,7 @@ class TestState(unittest.TestCase):
     def test_id_for_string(self):
         self.assertEqual(id_for_string("PAUSED"), 1)
         self.assertEqual(id_for_string("Shipping soon"), 3)
-        self.assertEqual(id_for_string("Doesn't exist"), 0)
+        self.assertEqual(id_for_string("Doesn't exist"), -1)
 
 
 if __name__ == '__main__':
