@@ -1,0 +1,278 @@
+main {
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+    "app-logo"
+    "synopsis"
+    "list-header"
+    "filter"
+    "projects-list";
+}
+
+#app-logo {
+  justify-self: center;
+  align-self: center;
+}
+
+#app-logo img {
+  width: 300px;
+  height: 300px;
+}
+
+#app-logo h1 {
+  color: #092c4c;
+  font-weight: 900;
+  font-size: 2.7em;
+}
+
+#synopsis {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  display: flex;
+  background-color: #fefefe;
+  width: 500px;
+  height: 100px;
+  border-radius: 8px;
+  justify-content: space-around;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+}
+
+#numdot {
+  display: flex;
+}
+
+#numdot span {
+  color: #061b3b;
+  font-size: 2.2em;
+  font-weight: 900;
+}
+
+#synopsis .underline {
+  color: #b6c1cf;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+#synopsis .dot {
+  margin: 6% 0 0 4%;
+}
+
+#list-header {
+  margin-top: 8%;
+  margin-left: 4%;
+  align-self: center;
+  color: #092c4c;
+}
+
+#list-header h2 {
+  font-weight: 700;
+  font-size: 1.7em;
+}
+#filter {
+  margin-left: 4%;
+  display: flex;
+  background-color: #fefefe;
+  padding: 14px;
+  height: 16px;
+  border-radius: 32px;
+  width: 300px;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+#filter #filter-text {
+  margin-right: 64px;
+  color: #9fadba;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+#filter select {
+  color: #93a3b1;
+  width: 140px;
+  font-weight: 900;
+  border: none;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(arrowdown.svg) 96% / 20% no-repeat transparent;
+}
+
+#projects-list {
+  display: flex;
+  justify-content: center;
+}
+
+#projects-list ul {
+  list-style: none;
+  margin: 4% 4%;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 32px 4%;
+  grid-auto-rows: 300px;
+}
+
+#projects-list li {
+  transition: all ease-out 500ms;
+  background-color: white;
+  border-radius: 8px;
+  padding: 8% 12%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+#projects-list li:hover {
+  cursor: pointer;
+  transform: translateY(-8px);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+#project-item-state {
+  text-align: right;
+}
+
+#project-item-state span {
+  text-transform: uppercase;
+  font-size: 0.88em;
+  font-weight: 500;
+}
+
+#project-item-info {
+  height: 80%;
+  margin-top: 16%;
+  text-align: left;
+}
+
+.clamp-max-lines-1 {
+  margin-top: 8%;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#project-item-title {
+  display: block;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: #092c4c;
+}
+
+.clamp-max-lines-6 {
+  margin-top: 4%;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+#project-item-desc {
+  color: #092c4c;
+  font-weight: 300;
+  font-size: 0.9em;
+}
+
+#img-empty {
+  width: 50vw;
+  height: auto;
+  margin-top: 8%;
+  opacity: 0.7;
+}
+
+@media (min-width: 700px) {
+  main {
+    margin: 4% 8%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "app-logo app-logo app-logo"
+      "synopsis synopsis synopsis"
+      "list-header list-header filter"
+      "projects-list projects-list projects-list";
+  }
+
+  #projects-list ul {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #list-header {
+    margin: 16% 0 0 0;
+  }
+
+  #list-header h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  #filter {
+    justify-self: end;
+    align-self: flex-end;
+    margin-top: 16%;
+  }
+}
+
+@media (min-width: 1200px) {
+  main {
+    margin: 4% 8%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "app-logo synopsis synopsis"
+      "list-header list-header filter"
+      "projects-list projects-list projects-list";
+  }
+
+  #synopsis {
+    justify-self: end;
+  }
+
+  #app-logo {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.green {
+  background-color: #2ac6a5;
+}
+
+.yellow {
+  background-color: #fff03d;
+}
+
+.blue {
+  background-color: #216bff;
+}
+
+#app-logo {
+  grid-area: app-logo;
+}
+
+#synopsis {
+  grid-area: synopsis;
+}
+
+#list-header {
+  grid-area: list-header;
+}
+
+#filter {
+  grid-area: filter;
+}
+
+#projects-list {
+  grid-area: projects-list;
+}

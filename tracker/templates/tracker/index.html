@@ -1,0 +1,92 @@
+{% extends "projectstracker/index.html" %}
+{% load static %}
+{% load statestring %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{% static 'tracker/index.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
+<main>
+        <div id="app-logo">
+                <img src="{% static 'tracker/applogo.svg' %}" />
+                <h1>Projects tracker</h1>
+        </div>
+        <div id="synopsis">
+                <div id="in-progress">
+                        <div id="numdot">
+                                <span><b>{{ n_in_progress }}</b></span>
+                                <div class="dot blue"></div>
+                        </div>
+                        <span class="underline">In progress</span>
+                </div>
+                <div id="paused">
+                        <div id="numdot">
+                                <span><b>{{ n_paused }}</b></span>
+                                <div class="dot yellow"></div>
+                        </div>
+                        <span class="underline">Paused</span>
+                </div>
+                <div id="shipped">
+                        <div id="numdot">
+                                <span><b>{{ n_shipped }}</b></span>
+                                <div class="dot green"></div>
+                        </div>
+                        <span class="underline">Shipped</span>
+                </div>
+                <div id="total">
+                        <div id="numdot">
+                                <span><b>{{ n_total }}</b></span>
+                        </div>
+                        <span class="underline">Projects total</span>
+                </div>
+        </div>
+        <div id="list-header">
+                <h2>Projects</h2>
+        </div>
+        <div id="filter">
+                <span id="filter-text">Filter by</span>
+                <select class="filter-select">
+                        <option value="" selected>All projects</option>
+                        <option value="buried">Buried</option>
+                        <option value="paused">Paused</option>
+                        <option value="in progress">In progress</option>
+                        <option value="shipping soon">Shipping soon</option>
+                        <option value="shipped">Shipped</option>
+                </select>
+        </div>
+        <div id="projects-list">
+                {% if projects %}
+                <ul>
+                        {% for project in projects %}
+                        <li class="project-item">
+                                <div id="project-item-state">
+                                        <span>{{project.state|statestring}}</span>
+                                </div>
+                                <div id="project-item-info">
+                                        <div class="clamp-max-lines-1">
+                                                <span id="project-item-title">{{project.title}}</span>
+                                        </div>
+                                        <br>
+                                        <div class="clamp-max-lines-6">
+                                                <span id="project-item-desc">{{project.description}}</span>
+                                        </div>
+                                </div>
+                        </li>
+                        {% endfor %}
+                </ul>
+                {% else %}
+                <img id="img-empty" alt="empty" src="{% static 'tracker/empty.svg' %}" />
+                {% endif %}
+        </div>
+</main>
+<script>
+        const selectElement = document.querySelector('.filter-select');
+        selectElement.value = `{{filter_str}}`
+
+        selectElement.addEventListener('change', (event) => {
+                let filter = `${event.target.value}`
+                window.location.href = `/?filter=${filter}`;
+        });
+</script>
+{% endblock content %}
