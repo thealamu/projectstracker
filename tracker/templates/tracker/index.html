@@ -47,12 +47,12 @@
         <div id="filter">
                 <span id="filter-text">Filter by</span>
                 <select class="filter-select">
+                        <option value="" selected>All projects</option>
                         <option value="buried">Buried</option>
                         <option value="paused">Paused</option>
                         <option value="in progress">In progress</option>
                         <option value="shipping soon">Shipping soon</option>
                         <option value="shipped">Shipped</option>
-                        <option value="" selected>All projects</option>
                 </select>
         </div>
         <div id="projects-list">
@@ -78,6 +78,7 @@
 </main>
 <script>
         const selectElement = document.querySelector('.filter-select');
+        selectElement.value = `{{filter_str}}`
 
         selectElement.addEventListener('change', (event) => {
                 let filter = `${event.target.value}`

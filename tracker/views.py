@@ -19,6 +19,7 @@ def index(request):
         'n_paused': projects.filter(state=1).count(),
         'n_shipped': projects.filter(state=4).count(),
         'n_total': projects.count(),
+        'filter_str': filter_state,
     }
 
     return render(request, 'tracker/index.html', context)
